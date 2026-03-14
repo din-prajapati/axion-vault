@@ -1,0 +1,283 @@
+/* @settings
+
+name: Obsidian Inheritance - Vauxhall Style
+id: inheritance-vauxhall
+settings:
+    -
+        id: base-colors
+        title: Base Colors
+        description: Choose your base color scheme
+        type: heading
+        level: 1
+        collapsed: false
+    -
+        id: color-scheme
+        title: Color Scheme
+        description: Select base color variation
+        type: class-select
+        allowEmpty: false
+        default: indigo
+        options:
+            - 
+                label: White
+                value: white
+            -
+                label: Teal
+                value: teal
+            -
+                label: Blue
+                value: blue
+            -
+                label: Indigo (Default)
+                value: indigo
+            -
+                label: Purple
+                value: purple
+            -
+                label: Magenta
+                value: magenta
+            -
+                label: Red
+                value: red
+    -
+        id: intensity-mode
+        title: Background Intensity
+        description: Choose background color intensity
+        type: class-select
+        allowEmpty: false
+        default: standard
+        options:
+            -
+                label: Nebula (Light)
+                value: nebula
+            -
+                label: Standard (Default)
+                value: standard
+            -
+                label: Void (Dark)
+                value: void
+    -
+        id: header-styles
+        title: Header Styles
+        description: Choose header color style
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: header-style
+        title: Header Style
+        description: Select header color variation
+        type: class-select
+        allowEmpty: false
+        default: gradient-cyan-purple
+        options:
+            -
+                label: Mono
+                value: mono
+            -
+                label: Mono Gradient
+                value: mono-gradient
+            -
+                label: Rainbow
+                value: rainbow
+            -
+                label: Gradient (Mint/Blue)
+                value: gradient-mint-blue
+            -
+                label: Gradient (Cyan/Purple)
+                value: gradient-cyan-purple
+            -
+                label: Gradient (Blue/Red)
+                value: gradient-blue-red
+    -
+        id: layout-features
+        title: Layout Features
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-glass-effect
+        title: Glass Effect
+        description: Enable glassmorphism effects
+        type: class-toggle
+        default: true
+    -
+        id: enable-smooth-transitions
+        title: Smooth Transitions
+        description: Enable smooth animations and transitions
+        type: class-toggle
+        default: true
+    -
+        id: enable-floating-elements
+        title: Floating Elements
+        description: Enable floating card effects
+        type: class-toggle
+        default: true
+
+*/
+
+/* Color Scheme Variables */
+.indigo {
+  --base-primary: #4f46e5;
+  --base-secondary: #6366f1;
+  --base-accent: #8b5cf6;
+}
+
+.blue {
+  --base-primary: #3b82f6;
+  --base-secondary: #2563eb;
+  --base-accent: #1d4ed8;
+}
+
+.teal {
+  --base-primary: #14b8a6;
+  --base-secondary: #0d9488;
+  --base-accent: #0f766e;
+}
+
+.purple {
+  --base-primary: #8b5cf6;
+  --base-secondary: #7c3aed;
+  --base-accent: #6d28d9;
+}
+
+.magenta {
+  --base-primary: #ec4899;
+  --base-secondary: #db2777;
+  --base-accent: #be185d;
+}
+
+.red {
+  --base-primary: #ef4444;
+  --base-secondary: #dc2626;
+  --base-accent: #b91c1c;
+}
+
+.white {
+  --base-primary: #374151;
+  --base-secondary: #4b5563;
+  --base-accent: #6b7280;
+}
+
+/* Intensity Modes */
+.nebula {
+  --bg-primary: #fefefe;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --border-color: #e2e8f0;
+}
+
+.standard {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #e2e8f0;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --border-color: #cbd5e1;
+}
+
+.void {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --border-color: #475569;
+}
+
+/* Header Styles */
+.mono .object-header,
+.mono .project-header,
+.mono .person-header {
+  background: var(--base-primary);
+}
+
+.mono-gradient .object-header,
+.mono-gradient .project-header,
+.mono-gradient .person-header {
+  background: linear-gradient(135deg, var(--base-primary), color-mix(in srgb, var(--base-primary) 70%, white 30%));
+}
+
+.rainbow .object-header,
+.rainbow .project-header,
+.rainbow .person-header {
+  background: linear-gradient(135deg, #ef4444, #f97316, #eab308, #22c55e, #06b6d4, #3b82f6, #8b5cf6);
+}
+
+.gradient-mint-blue .object-header,
+.gradient-mint-blue .project-header,
+.gradient-mint-blue .person-header {
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+}
+
+.gradient-cyan-purple .object-header,
+.gradient-cyan-purple .project-header,
+.gradient-cyan-purple .person-header {
+  background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+}
+
+.gradient-blue-red .object-header,
+.gradient-blue-red .project-header,
+.gradient-blue-red .person-header {
+  background: linear-gradient(135deg, #3b82f6, #ef4444);
+}
+
+/* Glass Effect */
+.body.enable-glass-effect .profile-container,
+.body.enable-glass-effect .project-profile,
+.body.enable-glass-effect .person-profile,
+.body.enable-glass-effect .index-card,
+.body.enable-glass-effect .project-card,
+.body.enable-glass-effect .person-card {
+  background: color-mix(in srgb, var(--bg-secondary) 80%, transparent 20%);
+  backdrop-filter: blur(10px);
+  border: 1px solid color-mix(in srgb, var(--border-color) 50%, transparent 50%);
+}
+
+/* Smooth Transitions */
+.body.enable-smooth-transitions * {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.body.enable-smooth-transitions .layout-btn:hover {
+  transform: translateY(-1px);
+}
+
+.body.enable-smooth-transitions .index-card:hover,
+.body.enable-smooth-transitions .project-card:hover,
+.body.enable-smooth-transitions .person-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Floating Elements */
+.body.enable-floating-elements .profile-container,
+.body.enable-floating-elements .project-profile,
+.body.enable-floating-elements .person-profile,
+.body.enable-floating-elements .index-card,
+.body.enable-floating-elements .project-card,
+.body.enable-floating-elements .person-card {
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0 0 0 1px color-mix(in srgb, var(--base-primary) 20%, transparent 80%);
+}
+
+.body.enable-floating-elements .index-card:hover,
+.body.enable-floating-elements .project-card:hover,
+.body.enable-floating-elements .person-card:hover {
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px color-mix(in srgb, var(--base-primary) 40%, transparent 60%);
+}
+
+/* Integration with existing inheritance system */
+.body.enable-glass-effect .base-object-container {
+  backdrop-filter: blur(10px);
+}
+
+.body.enable-smooth-transitions .progress-fill {
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}

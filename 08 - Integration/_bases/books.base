@@ -1,0 +1,12 @@
+{
+  "filter": "type = \"book\"",
+  "view": "table",
+  "columns": [
+    { "property": "file.link", "label": "Title",    "width": 220 },
+    { "property": "author",    "label": "Author",   "width": 150 },
+    { "property": "status",    "label": "Status",   "width": 120 },
+    { "property": "rating",    "label": "Rating",   "width": 80  },
+    { "property": "genre",     "label": "Genre",    "width": 110 },
+    { "property": "finished",  "label": "Finished", "width": 110 }
+  ]
+}

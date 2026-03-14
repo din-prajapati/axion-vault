@@ -1,0 +1,11 @@
+{
+  "filter": "type = \"person\"",
+  "view": "table",
+  "columns": [
+    { "property": "file.link",    "label": "Name",         "width": 180 },
+    { "property": "role",         "label": "Role",         "width": 130 },
+    { "property": "company",      "label": "Company",      "width": 150 },
+    { "property": "last_contact", "label": "Last Contact", "width": 110 },
+    { "property": "projects",     "label": "Projects",     "width": 160 }
+  ]
+}

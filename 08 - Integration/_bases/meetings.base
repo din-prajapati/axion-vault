@@ -1,0 +1,10 @@
+{
+  "filter": "type = \"meeting\"",
+  "view": "table",
+  "columns": [
+    { "property": "file.link", "label": "Meeting",  "width": 220 },
+    { "property": "date",      "label": "Date",     "width": 110 },
+    { "property": "people",    "label": "People",   "width": 180 },
+    { "property": "projects",  "label": "Projects", "width": 160 }
+  ]
+}

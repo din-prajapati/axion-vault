@@ -1,0 +1,85 @@
+/*------------------------------------------------------------------------------
+  Obsidian Colored Sidebar Items — Cloud KMS Edition
+  Based on CyanVoxel's snippet v2.0.0 | Remapped for new vault numbering
+  Structure: 00 Home · 01 Inbox · 02 Projects · 03 Areas · 04 Resources
+             05 Permanent · 06 Daily · 07 Archives · 08 Integration · 99 Meta
+------------------------------------------------------------------------------*/
+
+:root {
+  /* ── CyanVoxel Palette ── */
+  --mint:        #52eea3;
+  --cyan:        #51e1e9;
+  --cool-cyan:   #43cfea;
+  --light-blue:  #54b6f8;
+  --blue:        #437cf3;
+  --blue-violet: #6f51f4;
+  --violet:      #9446f8;
+  --purple:      #c952ed;
+  --magenta:     #e54f9b;
+  --hot-red:     #e3365e;
+  --cool-gray:   #515768;
+
+  --default-text-color: #d0d0d0;
+  --highlight: #fff;
+  --shadow: rgba(0,0,0,0.5);
+}
+
+/* ── 00 · Maps of Content · MINT ── */
+.nav-folder-title[data-path^="00"] { --prefix-color: var(--mint); }
+.nav-folder-title[data-path^="00"] { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="00"] .nav-folder-collapse-indicator { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="00"]:hover { background-color: color-mix(in srgb, var(--prefix-color) 15%, transparent) !important; }
+
+/* ── 01 · Inbox · CYAN ── */
+.nav-folder-title[data-path^="01"] { --prefix-color: var(--cyan); }
+.nav-folder-title[data-path^="01"] { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="01"] .nav-folder-collapse-indicator { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="01"]:hover { background-color: color-mix(in srgb, var(--prefix-color) 15%, transparent) !important; }
+
+/* ── 02 · Projects · LIGHT BLUE ── */
+.nav-folder-title[data-path^="02"] { --prefix-color: var(--light-blue); }
+.nav-folder-title[data-path^="02"] { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="02"] .nav-folder-collapse-indicator { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="02"]:hover { background-color: color-mix(in srgb, var(--prefix-color) 15%, transparent) !important; }
+
+/* ── 03 · Areas · BLUE ── */
+.nav-folder-title[data-path^="03"] { --prefix-color: var(--blue); }
+.nav-folder-title[data-path^="03"] { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="03"] .nav-folder-collapse-indicator { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="03"]:hover { background-color: color-mix(in srgb, var(--prefix-color) 15%, transparent) !important; }
+
+/* ── 04 · Resources · VIOLET ── */
+.nav-folder-title[data-path^="04"] { --prefix-color: var(--violet); }
+.nav-folder-title[data-path^="04"] { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="04"] .nav-folder-collapse-indicator { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="04"]:hover { background-color: color-mix(in srgb, var(--prefix-color) 15%, transparent) !important; }
+
+/* ── 05 · Permanent · PURPLE ── */
+.nav-folder-title[data-path^="05"] { --prefix-color: var(--purple); }
+.nav-folder-title[data-path^="05"] { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="05"] .nav-folder-collapse-indicator { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="05"]:hover { background-color: color-mix(in srgb, var(--prefix-color) 15%, transparent) !important; }
+
+/* ── 06 · Daily · MAGENTA ── */
+.nav-folder-title[data-path^="06"] { --prefix-color: var(--magenta); }
+.nav-folder-title[data-path^="06"] { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="06"] .nav-folder-collapse-indicator { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="06"]:hover { background-color: color-mix(in srgb, var(--prefix-color) 15%, transparent) !important; }
+
+/* ── 07 · Archives · HOT RED ── */
+.nav-folder-title[data-path^="07"] { --prefix-color: var(--hot-red); }
+.nav-folder-title[data-path^="07"] { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="07"] .nav-folder-collapse-indicator { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="07"]:hover { background-color: color-mix(in srgb, var(--prefix-color) 15%, transparent) !important; }
+
+/* ── 08 · Integration · COOL CYAN ── */
+.nav-folder-title[data-path^="08"] { --prefix-color: var(--cool-cyan); }
+.nav-folder-title[data-path^="08"] { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="08"] .nav-folder-collapse-indicator { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="08"]:hover { background-color: color-mix(in srgb, var(--prefix-color) 15%, transparent) !important; }
+
+/* ── 99 · Meta · COOL GRAY ── */
+.nav-folder-title[data-path^="99"] { --prefix-color: var(--cool-gray); }
+.nav-folder-title[data-path^="99"] { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="99"] .nav-folder-collapse-indicator { color: var(--prefix-color) !important; }
+.nav-folder-title[data-path^="99"]:hover { background-color: color-mix(in srgb, var(--prefix-color) 15%, transparent) !important; }

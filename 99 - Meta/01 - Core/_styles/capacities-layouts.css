@@ -1,0 +1,501 @@
+/* @settings
+
+name: Capacities-Style Layouts
+id: capacities-layouts
+settings:
+    -
+        id: capacities-colors
+        title: Capacities Color Scheme
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: primary-brand
+        title: Primary Brand Color
+        description: Main brand color (like Capacities blue)
+        type: variable-color
+        default: '#2563eb'
+    -
+        id: secondary-brand
+        title: Secondary Brand Color
+        description: Secondary accent color
+        type: variable-color
+        default: '#7c3aed'
+    -
+        id: surface-color
+        title: Surface Color
+        description: Background color for cards and surfaces
+        type: variable-color
+        default: '#ffffff'
+    -
+        id: capacities-features
+        title: Capacities Features
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: enable-object-types
+        title: Enable Object Types
+        description: Show object type indicators like Capacities
+        type: class-toggle
+        default: true
+    -
+        id: enable-relationship-lines
+        title: Enable Relationship Lines
+        description: Show connection lines between related objects
+        type: class-toggle
+        default: true
+    -
+        id: enable-hover-preview
+        title: Enable Hover Previews
+        description: Show preview on hover like Capacities
+        type: class-toggle
+        default: true
+
+*/
+
+:root {
+  --capacities-primary: var(--primary-brand, #2563eb);
+  --capacities-secondary: var(--secondary-brand, #7c3aed);
+  --capacities-surface: var(--surface-color, #ffffff);
+  --capacities-border: #e2e8f0;
+  --capacities-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --capacities-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --capacities-radius: 8px;
+  --capacities-radius-lg: 12px;
+}
+
+/* Object Type System (Capacities-style) */
+.body.enable-object-types .object-type-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--capacities-primary);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.object-type-project { background: #3b82f6; }
+.object-type-person { background: #10b981; }
+.object-type-document { background: #f59e0b; }
+.object-type-task { background: #ef4444; }
+
+/* Capacities-Style Profile Layout */
+.capacities-profile {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  min-height: 70vh;
+}
+
+.profile-sidebar-capacities {
+  background: var(--capacities-surface);
+  border: 1px solid var(--capacities-border);
+  border-radius: var(--capacities-radius-lg);
+  padding: 0;
+  overflow: hidden;
+  box-shadow: var(--capacities-shadow);
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.profile-header-capacities {
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--capacities-primary), var(--capacities-secondary));
+  color: white;
+}
+
+.profile-avatar-capacities {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  color: var(--capacities-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-name-capacities {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.profile-role-capacities {
+  opacity: 0.9;
+  font-size: 0.875rem;
+}
+
+.profile-stats-capacities {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--capacities-border);
+}
+
+.stat-row-capacities {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.stat-row-capacities:last-child {
+  border-bottom: none;
+}
+
+.stat-label-capacities {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.stat-value-capacities {
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+.profile-actions-capacities {
+  padding: 1.5rem;
+}
+
+.action-btn-capacities {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--capacities-primary);
+  color: white;
+  border: none;
+  border-radius: var(--capacities-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 0.5rem;
+}
+
+.action-btn-capacities:hover {
+  background: color-mix(in srgb, var(--capacities-primary) 80%, black 20%);
+  transform: translateY(-1px);
+}
+
+.action-btn-secondary {
+  background: transparent;
+  color: var(--capacities-primary);
+  border: 1px solid var(--capacities-primary);
+}
+
+.action-btn-secondary:hover {
+  background: var(--capacities-primary);
+  color: white;
+}
+
+.profile-content-capacities {
+  background: var(--capacities-surface);
+  border: 1px solid var(--capacities-border);
+  border-radius: var(--capacities-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--capacities-shadow);
+}
+
+.content-tabs-capacities {
+  display: flex;
+  border-bottom: 1px solid var(--capacities-border);
+  background: #f8fafc;
+}
+
+.tab-capacities {
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.tab-capacities.active {
+  color: var(--capacities-primary);
+  background: white;
+}
+
+.tab-capacities.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--capacities-primary);
+}
+
+.tab-content-capacities {
+  padding: 2rem;
+}
+
+/* Capacities-Style Index Cards */
+.capacities-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.capacities-card {
+  background: var(--capacities-surface);
+  border: 1px solid var(--capacities-border);
+  border-radius: var(--capacities-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--capacities-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.body.enable-hover-preview .capacities-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--capacities-shadow-lg);
+  border-color: var(--capacities-primary);
+}
+
+.capacities-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--capacities-primary), var(--capacities-secondary));
+}
+
+.card-header-capacities {
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+}
+
+.card-title-capacities {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-normal);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.card-meta-capacities {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.card-type-capacities {
+  padding: 0.125rem 0.5rem;
+  background: var(--capacities-primary);
+  color: white;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.card-date-capacities {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.card-content-capacities {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.card-description-capacities {
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-tags-capacities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.card-tag-capacities {
+  padding: 0.125rem 0.5rem;
+  background: #f1f5f9;
+  color: var(--text-muted);
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+/* Relationship Lines (Capacities-style) */
+.body.enable-relationship-lines .relationship-container {
+  position: relative;
+  margin: 2rem 0;
+}
+
+.relationship-line {
+  position: absolute;
+  background: var(--capacities-primary);
+  height: 2px;
+  z-index: 1;
+}
+
+.relationship-node {
+  position: relative;
+  background: var(--capacities-surface);
+  border: 2px solid var(--capacities-primary);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  z-index: 2;
+}
+
+.relationship-label {
+  position: absolute;
+  background: var(--capacities-primary);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+/* Encyclopedia Layout (Capacities-inspired) */
+.capacities-encyclopedia {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  min-height: 80vh;
+}
+
+.encyclopedia-sidebar-capacities {
+  background: var(--capacities-surface);
+  border: 1px solid var(--capacities-border);
+  border-radius: var(--capacities-radius-lg);
+  box-shadow: var(--capacities-shadow);
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+  overflow: hidden;
+}
+
+.sidebar-header-capacities {
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--capacities-border);
+  font-weight: 700;
+  color: var(--text-normal);
+}
+
+.sidebar-nav-capacities {
+  padding: 1rem 0;
+}
+
+.nav-item-capacities {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-item-capacities:hover,
+.nav-item-capacities.active {
+  color: var(--capacities-primary);
+  background: #f1f5f9;
+  border-left-color: var(--capacities-primary);
+}
+
+.encyclopedia-content-capacities {
+  background: var(--capacities-surface);
+  border: 1px solid var(--capacities-border);
+  border-radius: var(--capacities-radius-lg);
+  box-shadow: var(--capacities-shadow);
+  overflow: hidden;
+}
+
+.content-header-capacities {
+  padding: 2rem 2rem 1rem 2rem;
+  border-bottom: 1px solid var(--capacities-border);
+  background: #f8fafc;
+}
+
+.content-title-capacities {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-normal);
+  margin: 0 0 0.5rem 0;
+}
+
+.content-subtitle-capacities {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+}
+
+.content-body-capacities {
+  padding: 2rem;
+}
+
+/* Hover Previews (Capacities-style) */
+.body.enable-hover-preview .hover-preview {
+  position: absolute;
+  background: var(--capacities-surface);
+  border: 1px solid var(--capacities-border);
+  border-radius: var(--capacities-radius);
+  box-shadow: var(--capacities-shadow-lg);
+  padding: 1rem;
+  max-width: 300px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.body.enable-hover-preview .hover-preview.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .capacities-profile,
+  .capacities-encyclopedia {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-sidebar-capacities,
+  .encyclopedia-sidebar-capacities {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .capacities-cards-grid {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+  }
+  
+  .content-tabs-capacities {
+    overflow-x: auto;
+  }
+  
+  .tab-capacities {
+    white-space: nowrap;
+    min-width: max-content;
+  }
+}

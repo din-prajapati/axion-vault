@@ -1,0 +1,76 @@
+---
+# Project Base Schema
+__inherits__: BaseObject
+
+__meta__:
+  id: project_v1
+  type: base
+  parent_id: base_object_v1
+  version: 1.0
+  created: 2024-01-15
+  inheritance_chain:
+    - base_object_v1
+    - project_v1
+  inheritance_depth: 1
+
+# Inherited Fields (with overrides)
+title: New Project
+description: ""
+status: Planning
+tags:
+  - project
+
+# Project-Specific Fields
+project_manager: ""
+team_members: []
+budget: 0
+priority: Medium
+progress: 0
+start_date: ""
+deadline: ""
+end_date: ""
+deliverables: []
+risks: []
+milestones: []
+
+# Layout Properties
+pageLayout: profile
+viewMode: preview
+
+# Extended CSS Classes
+cssclasses:
+  - project
+  - base-object
+
+# Extended Field Types
+__types__:
+  project_manager: link
+  team_members: multiselect
+  budget: number
+  priority: select
+  progress: number
+  start_date: date
+  deadline: date
+  end_date: date
+  deliverables: multiselect
+  risks: multiselect
+  milestones: multiselect
+
+# Extended Options
+__options__:
+  status:
+    - Planning
+    - Active
+    - On Hold
+    - Review
+    - Completed
+    - Cancelled
+  priority:
+    - Low
+    - Medium
+    - High
+    - Critical
+
+# Template Reference
+__template_file__: Project-Template.md
+---

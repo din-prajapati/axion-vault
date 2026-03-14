@@ -1,0 +1,26 @@
+{
+  "daily": {
+    "enabled": true,
+    "folder": "06 - Daily/Daily",
+    "format": "YYYY-MM-DD",
+    "template": "99 - Meta/02 - Templates/(TEMPLATE) Daily.md"
+  },
+  "weekly": {
+    "enabled": true,
+    "folder": "06 - Daily/Weekly",
+    "format": "YYYY-[W]WW",
+    "template": "99 - Meta/02 - Templates/(TEMPLATE) Weekly.md"
+  },
+  "monthly": {
+    "enabled": true,
+    "folder": "06 - Daily/Monthly",
+    "format": "YYYY-MM",
+    "template": "99 - Meta/02 - Templates/(TEMPLATE) Monthly.md"
+  },
+  "yearly": {
+    "enabled": false,
+    "folder": "06 - Daily/Yearly",
+    "format": "YYYY",
+    "template": ""
+  }
+}

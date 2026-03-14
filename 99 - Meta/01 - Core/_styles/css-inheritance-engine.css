@@ -1,0 +1,111 @@
+/* CSS Inheritance Engine - No JavaScript Required */
+
+/* Base Object Foundation */
+.base-object {
+    /* Core inherited properties */
+    --inherited-padding: 1.5rem;
+    --inherited-margin: 1rem;
+    --inherited-border-radius: 8px;
+    --inherited-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Inheritance Chain Visualization */
+.base-object::before {
+    content: "🧬 " attr(data-inheritance-chain);
+    position: absolute;
+    top: -1.5rem;
+    right: 0;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.base-object:hover::before {
+    opacity: 1;
+}
+
+/* Multi-Level Inheritance via CSS Cascade */
+.base-object {
+    /* Level 1: Base styles */
+    padding: var(--inherited-padding);
+    margin: var(--inherited-margin);
+    border-radius: var(--inherited-border-radius);
+    box-shadow: var(--inherited-shadow);
+    position: relative;
+}
+
+.base-object.project {
+    /* Level 2: Project inherits + extends base */
+    --inherited-padding: 2rem;
+    --project-accent: #3b82f6;
+    border-left: 4px solid var(--project-accent);
+}
+
+.base-object.project.high-priority {
+    /* Level 3: High priority project extends project */
+    --project-accent: #ef4444;
+    --inherited-shadow: 0 4px 16px rgba(239, 68, 68, 0.2);
+}
+
+.base-object.person {
+    /* Level 2: Person inherits + extends base differently */
+    --inherited-padding: 1.8rem;
+    --person-accent: #10b981;
+    border-left: 4px solid var(--person-accent);
+}
+
+/* Property Inheritance Override System */
+.base-object[data-override="true"] {
+    /* Child can override parent properties */
+    padding: var(--child-padding, var(--inherited-padding));
+    margin: var(--child-margin, var(--inherited-margin));
+}
+
+/* Dynamic Property Calculation */
+.base-object.project[data-progress] {
+    /* Progress-based styling inheritance */
+    --progress: attr(data-progress number, 0);
+    --progress-color: hsl(calc(var(--progress) * 1.2), 70%, 50%);
+    border-color: var(--progress-color);
+}
+
+/* Conditional Inheritance */
+.base-object:not(.person) {
+    /* Styles applied to all except person */
+    --show-deadline: block;
+}
+
+.base-object.person {
+    /* Person-specific overrides */
+    --show-deadline: none;
+}
+
+.deadline-field {
+    display: var(--show-deadline, block);
+}
+
+/* Inheritance State Machine */
+.base-object[data-status="draft"] {
+    --status-color: #fbbf24;
+    --status-bg: #fef3c7;
+}
+
+.base-object[data-status="active"] {
+    --status-color: #10b981;
+    --status-bg: #d1fae5;
+}
+
+.base-object[data-status="completed"] {
+    --status-color: #6b7280;
+    --status-bg: #f3f4f6;
+}
+
+.status-indicator {
+    background: var(--status-bg);
+    color: var(--status-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}

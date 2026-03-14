@@ -1,0 +1,72 @@
+---
+# Base Object Schema
+__meta__:
+  id: base_object_v1
+  type: base
+  version: 1.0
+  created: 2024-01-15
+  inheritance_chain:
+    - base_object_v1
+  max_depth: 5
+
+# Core Fields
+title: Untitled Object
+description: ""
+status: Draft
+created_date: ""
+modified_date: ""
+author: ""
+tags: []
+links: []
+attachments: []
+
+# Layout Properties
+pageLayout: default
+viewMode: edit
+cssclasses:
+  - base-object
+
+# Field Types
+__types__:
+  title: string
+  description: text
+  status: select
+  created_date: date
+  modified_date: date
+  author: string
+  tags: multiselect
+  links: multiselect
+  attachments: multiselect
+  pageLayout: select
+  viewMode: select
+
+# Field Options
+__options__:
+  status:
+    - Draft
+    - In Progress
+    - Review
+    - Published
+    - Archived
+  pageLayout:
+    - default
+    - profile
+    - encyclopedia
+    - index-card
+    - timeline
+  viewMode:
+    - edit
+    - preview
+    - live
+
+# Validation Rules
+__validation__:
+  title:
+    required: true
+    min_length: 1
+  status:
+    required: true
+
+# Template Reference
+__template_file__: Base-Object-Template.md
+---

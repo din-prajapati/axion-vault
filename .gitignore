@@ -1,0 +1,61 @@
+# ─── Obsidian System ─────────────────────────────────────────
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspaces.json
+.obsidian/cache
+.obsidian/plugins/*/data.json     # user-specific plugin state
+.obsidian/graph.json              # personal graph layout
+.obsidian/starred.json
+.obsidian/bookmarks.json
+.obsidian/recent-files-obsidian.json
+
+# Keep: app.json, appearance.json, hotkeys.json, community-plugins.json
+# Keep: all plugin binaries (main.js, manifest.json, styles.css)
+# Keep: snippets/, themes/, icons/
+
+# ─── Personal Data (never in product repo) ───────────────────
+06 - Daily/Daily/**/*.md          # real daily notes
+06 - Daily/Weekly/**/*.md
+06 - Daily/Monthly/**/*.md
+06 - Daily/Yearly/**/*.md
+03 - Areas/Relationships/*.md     # real people notes
+03 - Areas/Finance/**/*.md
+07 - Archives/**/*.md
+05 - Permanent/**/*.md            # personal evergreen notes
+01 - Inbox/*.md                   # live inbox items
+02 - Projects/_on/*.md            # real active projects
+02 - Projects/_ongoing/*.md
+02 - Projects/_simmering/*.md
+02 - Projects/_sleeping/*.md
+CLAUDE_COWORK.md                  # session context
+*.CLAUDE_COWORK.md
+
+# ─── Exceptions: keep sample/demo files ──────────────────────
+!02 - Projects/_on/Website Redesign.md
+!02 - Projects/_on/Q2 Content Strategy.md
+!02 - Projects/_ongoing/Finance Tracking.md
+!02 - Projects/_simmering/Podcast Idea.md
+
+# ─── OS & Editor ─────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ─── Node / Scripts ──────────────────────────────────────────
+node_modules/
+.env
+.env.local
+*.log
+
+# ─── Build / Release ─────────────────────────────────────────
+dist/
+*.zip
+*.tar.gz
+
+# ─── API Keys (never commit) ─────────────────────────────────
+**/secrets.*
+**/.secrets

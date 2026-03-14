@@ -1,0 +1,79 @@
+---
+# Person Base Schema
+__inherits__: BaseObject
+
+__meta__:
+  id: person_v1
+  type: base
+  parent_id: base_object_v1
+  version: 1.0
+  created: 2024-01-15
+  inheritance_chain:
+    - base_object_v1
+    - person_v1
+  inheritance_depth: 1
+
+# Inherited Fields (with overrides)
+title: New Person
+description: ""
+status: Active
+tags:
+  - person
+
+# Person-Specific Fields
+full_name: ""
+email: ""
+phone: ""
+role: ""
+department: ""
+company: ""
+location: ""
+bio: ""
+skills: []
+projects: []
+reports_to: ""
+direct_reports: []
+
+# Layout Properties
+pageLayout: profile
+viewMode: preview
+
+# Extended CSS Classes
+cssclasses:
+  - person
+  - base-object
+
+# Extended Field Types
+__types__:
+  full_name: string
+  email: string
+  phone: string
+  role: string
+  department: string
+  company: string
+  location: string
+  bio: text
+  skills: multiselect
+  projects: multiselect
+  reports_to: link
+  direct_reports: multiselect
+
+# Extended Options
+__options__:
+  status:
+    - Active
+    - Inactive
+    - On Leave
+    - Terminated
+  role:
+    - Employee
+    - Manager
+    - Director
+    - VP
+    - Executive
+    - Contractor
+    - Intern
+
+# Template Reference
+__template_file__: Person-Template.md
+---

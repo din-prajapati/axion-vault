@@ -1,0 +1,12 @@
+{
+  "filter": "type = \"task\"",
+  "view": "table",
+  "columns": [
+    { "property": "file.link",  "label": "Task",     "width": 240 },
+    { "property": "status",     "label": "Status",   "width": 100 },
+    { "property": "priority",   "label": "Priority", "width": 90  },
+    { "property": "project",    "label": "Project",  "width": 160 },
+    { "property": "area",       "label": "Area",     "width": 110 },
+    { "property": "due",        "label": "Due",      "width": 110 }
+  ]
+}
