@@ -1,5 +1,5 @@
-# Cloud KMS — How to Use Guide
-**Version 5.0 · Hybrid ACE + Cloud KMS**
+# Axion — How to Use Guide
+**Version 5.0 · Hybrid ACE + Axion**
 
 ---
 
@@ -7,7 +7,7 @@
 
 ### Philosophy
 
-Cloud KMS runs on three layers:
+Axion runs on three layers:
 
 ```
 CAPTURE → EXECUTE → KNOW

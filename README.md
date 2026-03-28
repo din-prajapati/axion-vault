@@ -1,4 +1,4 @@
-# Cloud KMS — Knowledge Management System
+# Axion — Knowledge Management System
 
 > Production-grade Obsidian vault template combining ACE Framework effort intensity, typed frontmatter schema, live Bases views, and AI-native scripting.
 
@@ -21,13 +21,32 @@
 
 ## Quick Start
 
-```bash
-git clone https://github.com/YOUR_USERNAME/cloud-kms-product.git
-# Open as Obsidian vault → File → Open Vault → select folder
-bash "99 - Meta/00 - Settings/SETUP.sh"
-```
+1. **Clone** and open the folder in Obsidian (**File → Open folder as vault**).
+2. **Run setup** from the vault root:
 
-See [HOW-TO-GUIDE.md](99%20-%20Meta/01%20-%20Core/HOW-TO-GUIDE.md) for full setup and daily workflow.
+   | Platform | Command |
+   |----------|---------|
+   | **Windows (PowerShell)** | `.\99 - Meta\00 - Settings\SETUP.ps1` |
+   | **Windows (CMD)** | `99 - Meta\00 - Settings\SETUP.bat` |
+   | **macOS / Linux** | `bash "99 - Meta/00 - Settings/SETUP.sh"` *(needs `curl` + `jq`)* |
+
+3. **Restart Obsidian**, install the **Vauxhall** theme if prompted, configure **Templater** script folder → `99 - Meta/00 - Settings/00 - Scripts/`, and wire **QuickAdd** per `99 - Meta/00 - Settings/quickadd-config.md`.
+
+4. **Folder icons (optional):** Remix SVGs can be large; after clone you can run the PowerShell icon scripts or use Iconize’s built-in Remix download. See [SETUP-AND-GIT.md](99%20-%20Meta/00%20-%20Settings/SETUP-AND-GIT.md).
+
+5. **Font (optional):** [install-jetbrains-mono-nerd-font.ps1](99%20-%20Meta/00%20-%20Settings/install-jetbrains-mono-nerd-font.ps1) or install JetBrains Mono Nerd Font manually.
+
+---
+
+## Documentation
+
+| Guide | What it’s for |
+|-------|----------------|
+| **[SETUP-AND-GIT.md](99%20-%20Meta/00%20-%20Settings/SETUP-AND-GIT.md)** | First-time setup, icons, fonts, script order |
+| **[COMMIT-GUIDE.md](99%20-%20Meta/00%20-%20Settings/COMMIT-GUIDE.md)** | What to **commit** vs. skip (script-regenerable assets) |
+| **[HOW-TO-GUIDE.md](99%20-%20Meta/01%20-%20Core/HOW-TO-GUIDE.md)** | Daily workflow, Home.md, efforts, tasks |
+| **[ICONIZE-TROUBLESHOOTING.md](99%20-%20Meta/00%20-%20Settings/ICONIZE-TROUBLESHOOTING.md)** | Iconize / Remix icon pack issues |
+| **[GIT-STRATEGY.md](GIT-STRATEGY.md)** | Branching & product vs. personal data |
 
 ---
 

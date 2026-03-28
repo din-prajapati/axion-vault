@@ -38,7 +38,7 @@ if (CONTEXT_MODE === "note") {
   contextText = await app.vault.cachedRead(file);
 }
 
-const SYSTEM = "You are an assistant integrated into Cloud KMS, a personal knowledge vault (Obsidian). " +
+const SYSTEM = "You are an assistant integrated into Axion, a personal knowledge vault (Obsidian). " +
   "Be concise. Format output in Markdown. " +
   "If given a vault note, refer to it by its title. " +
   "End with a --- divider then one-line: *AI response via [Tool] · [date]*";

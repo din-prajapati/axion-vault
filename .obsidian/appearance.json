@@ -1,0 +1,13 @@
+{
+  "cssTheme": "Vauxhall",
+  "enabledCssSnippets": [
+    "Colored Sidebar Items",
+    "CyanVoxel's General Tweaks"
+  ],
+  "interfaceFontFamily": "JetBrains Mono Nerd Font Mono",
+  "textFontFamily": "JetBrains Mono Nerd Font Mono",
+  "monospaceFontFamily": "JetBrains Mono Nerd Font Mono",
+  "baseFontSize": 15,
+  "accentColor": "",
+  "theme": "system"
+}

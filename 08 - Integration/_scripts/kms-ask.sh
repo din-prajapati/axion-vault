@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================
-# kms-ask.sh — Cloud KMS universal AI router
+# kms-ask.sh — Axion universal AI router
 # Routes to Claude or Gemini based on --tool flag or env var.
 #
 # Usage:

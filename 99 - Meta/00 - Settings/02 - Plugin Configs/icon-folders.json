@@ -1,0 +1,81 @@
+{
+  "_readme": "Axion — Folder Icon Config for Obsidian Iconize plugin. Icons + colors aligned with Vauxhall theme and Colored Sidebar Items.",
+
+  "settings": {
+    "recentlyUsedIcons": [],
+    "iconPackExtractedFilePath": ".obsidian/icons",
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 18,
+    "iconColor": null,
+    "extraMargin": { "top": 0, "right": 4, "bottom": 0, "left": 0 },
+    "useInheritance": true,
+    "iconInFrontmatterEnabled": false,
+    "iconsInNotesEnabled": false
+  },
+
+  "00 - Maps of Content":           { "iconName": "RiMap2Line",          "iconColor": "#52eea3" },
+  "00 - Maps of Content/Home.md":   { "iconName": "RiMap2Line",           "iconColor": "#52eea3" },
+
+  "01 - Inbox":                     { "iconName": "RiInboxLine",         "iconColor": "#51e1e9" },
+  "01 - Inbox/_quick":              { "iconName": "RiFlashlightLine",    "iconColor": "#51e1e9" },
+  "01 - Inbox/_ideas":              { "iconName": "RiLightbulbFlashLine","iconColor": "#F59E0B" },
+  "01 - Inbox/_links":              { "iconName": "RiLinksLine",         "iconColor": "#51e1e9" },
+  "01 - Inbox/_media":              { "iconName": "RiImageLine",         "iconColor": "#51e1e9" },
+
+  "02 - Projects":                  { "iconName": "RiFlagLine",          "iconColor": "#54b6f8" },
+  "02 - Projects/_on":              { "iconName": "RiFireLine",          "iconColor": "#e3365e" },
+  "02 - Projects/_ongoing":         { "iconName": "RiRefreshLine",       "iconColor": "#10B981" },
+  "02 - Projects/_simmering":       { "iconName": "RiRestTimeLine",      "iconColor": "#fa9f50" },
+  "02 - Projects/_sleeping":        { "iconName": "RiZzzLine",           "iconColor": "#515768" },
+
+  "03 - Areas":                     { "iconName": "RiLayoutLine",        "iconColor": "#437cf3" },
+  "03 - Areas/Work":                { "iconName": "RiBriefcaseLine",     "iconColor": "#437cf3" },
+  "03 - Areas/Health":              { "iconName": "RiHeartPulseLine",    "iconColor": "#e3365e" },
+  "03 - Areas/Finance":             { "iconName": "RiMoneyDollarCircleLine","iconColor": "#10B981" },
+  "03 - Areas/Creative":            { "iconName": "RiBrushLine",         "iconColor": "#ffd85e" },
+  "03 - Areas/Relationships":       { "iconName": "RiTeamLine",          "iconColor": "#9446f8" },
+  "03 - Areas/Meetings":            { "iconName": "RiCalendarCheckLine", "iconColor": "#43cfea" },
+
+  "04 - Resources":                 { "iconName": "RiBookOpenLine",      "iconColor": "#9446f8" },
+  "04 - Resources/Learning":        { "iconName": "RiGraduationCapLine", "iconColor": "#9446f8" },
+  "04 - Resources/Media":           { "iconName": "RiMovieLine",         "iconColor": "#9446f8" },
+  "04 - Resources/Reference":       { "iconName": "RiFileListLine",      "iconColor": "#9446f8" },
+
+  "05 - Permanent":                 { "iconName": "RiSeedlingLine",      "iconColor": "#c952ed" },
+
+  "06 - Daily":                     { "iconName": "RiCalendarLine",      "iconColor": "#e54f9b" },
+  "06 - Daily/Daily":               { "iconName": "RiSunLine",           "iconColor": "#e54f9b" },
+  "06 - Daily/Weekly":              { "iconName": "RiCalendar2Line",     "iconColor": "#e54f9b" },
+  "06 - Daily/Monthly":             { "iconName": "RiCalendarEventLine", "iconColor": "#e54f9b" },
+  "06 - Daily/Yearly":              { "iconName": "RiCalendarTodoLine",  "iconColor": "#e54f9b" },
+
+  "07 - Archives":                  { "iconName": "RiArchiveLine",       "iconColor": "#e3365e" },
+
+  "08 - Integration":                              { "iconName": "RiCpuLine",              "iconColor": "#43cfea" },
+  "08 - Integration/_bases":                       { "iconName": "RiDatabaseLine",         "iconColor": "#43cfea" },
+  "08 - Integration/_scripts":                     { "iconName": "RiTerminalBoxLine",      "iconColor": "#43cfea" },
+
+  "99 - Meta":                                     { "iconName": "RiSettings4Line",        "iconColor": "#515768" },
+
+  "99 - Meta/00 - Settings":                       { "iconName": "RiToolsLine",            "iconColor": "#6B7280" },
+  "99 - Meta/00 - Settings/00 - Scripts":          { "iconName": "RiCodeSLine",            "iconColor": "#10B981" },
+  "99 - Meta/00 - Settings/00 - Scripts/00 - Automation": { "iconName": "RiRobotLine",    "iconColor": "#8B5CF6" },
+  "99 - Meta/00 - Settings/00 - Scripts/01 - JS":  { "iconName": "RiBracesLine",          "iconColor": "#F59E0B" },
+  "99 - Meta/00 - Settings/01 - Preloaded Classes":{ "iconName": "RiCss3Line",            "iconColor": "#3B82F6" },
+  "99 - Meta/00 - Settings/02 - Plugin Configs":   { "iconName": "RiPlugLine",            "iconColor": "#6B7280" },
+  "99 - Meta/00 - Settings/02 - Sources":          { "iconName": "RiStackLine",           "iconColor": "#6B7280" },
+  "99 - Meta/00 - Settings/02 - Sources/Fonts":    { "iconName": "RiBrushLine",           "iconColor": "#6B7280" },
+
+  "99 - Meta/01 - Core":                           { "iconName": "RiShieldCheckLine",     "iconColor": "#6B7280" },
+  "99 - Meta/01 - Core/_bases":                    { "iconName": "RiDatabase2Line",       "iconColor": "#7C3AED" },
+  "99 - Meta/01 - Core/_layouts":                  { "iconName": "RiLayoutLine",          "iconColor": "#0EA5E9" },
+  "99 - Meta/01 - Core/_scripts":                  { "iconName": "RiCodeSLine",            "iconColor": "#10B981" },
+  "99 - Meta/01 - Core/_styles":                   { "iconName": "RiPaintLine",           "iconColor": "#F59E0B" },
+  "99 - Meta/01 - Core/_templates":                { "iconName": "RiFileEditLine",        "iconColor": "#0EA5E9" },
+  "99 - Meta/01 - Core/docs":                      { "iconName": "RiFileListLine",        "iconColor": "#6B7280" },
+
+  "99 - Meta/02 - Templates":                      { "iconName": "RiFileEditLine",        "iconColor": "#0EA5E9" },
+  "99 - Meta/02 - Templates/FocusReset":           { "iconName": "RiFocusLine",           "iconColor": "#EF4444" },
+
+  "99 - Meta/attachments":                         { "iconName": "RiImageLine",           "iconColor": "#6B7280" }
+}

@@ -1,12 +1,24 @@
-{
-  "filter": "type = \"daily\"",
-  "view": "table",
-  "columns": [
-    { "property": "file.link",     "label": "Day",        "width": 160 },
-    { "property": "date",          "label": "Date",       "width": 110 },
-    { "property": "sleep",         "label": "Sleep (h)",  "width": 90  },
-    { "property": "mood",          "label": "Mood",       "width": 80  },
-    { "property": "energy",        "label": "Energy",     "width": 85  },
-    { "property": "deep_work_hrs", "label": "Deep Work",  "width": 100 }
-  ]
-}
+filter: type = "daily"
+view: table
+columns:
+  - property: file.link
+    label: Day
+    width: 160
+  - property: date
+    label: Date
+    width: 110
+  - property: sleep
+    label: Sleep (h)
+    width: 90
+  - property: mood
+    label: Mood
+    width: 80
+  - property: energy
+    label: Energy
+    width: 85
+  - property: deep_work_hrs
+    label: Deep Work
+    width: 100
+views:
+  - type: table
+    name: Table

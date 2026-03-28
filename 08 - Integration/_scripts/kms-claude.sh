@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================
-# kms-claude.sh — Cloud KMS → Claude CLI bridge
+# kms-claude.sh — Axion → Claude CLI bridge
 # Usage:
 #   echo "your prompt" | ./kms-claude.sh
 #   ./kms-claude.sh --file "path/to/note.md" --prompt "Summarise this"
@@ -17,7 +17,7 @@ API_KEY="${ANTHROPIC_API_KEY:-}"
 # ── Defaults ─────────────────────────────────────────────────
 FILE=""
 PROMPT=""
-SYSTEM_PROMPT="You are a knowledgeable assistant integrated into a personal knowledge management vault (Cloud KMS). \
+SYSTEM_PROMPT="You are a knowledgeable assistant integrated into a personal knowledge management vault (Axion). \
 Vault notes use PARA-adjacent structure: Projects, Areas, Resources, Permanent notes. \
 Frontmatter fields include: type, status, priority, area, deadline, tags. \
 Be concise. Format responses in Markdown. Use the note context provided."

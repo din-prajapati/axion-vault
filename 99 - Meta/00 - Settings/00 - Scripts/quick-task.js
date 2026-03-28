@@ -1,6 +1,6 @@
 <%*
 // ============================================================
-// quick-task.js — Cloud KMS fast task capture
+// quick-task.js — Axion fast task capture
 // Creates a standalone task note OR appends to a project note.
 // Trigger: QuickAdd macro → "New Task" (Cmd+T recommended)
 // ============================================================

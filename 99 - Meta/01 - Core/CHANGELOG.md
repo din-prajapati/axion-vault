@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Cloud KMS follow [Semantic Versioning](https://semver.org/).
+All notable changes to Axion follow [Semantic Versioning](https://semver.org/).
 
 ---
 
