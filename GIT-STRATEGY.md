@@ -1,18 +1,34 @@
-# Git Strategy — Cloud KMS
+# Git Strategy — Axion
 
 Two repos. One product. One life.
+
+---
+
+## Branch Creation Readiness ✓
+
+**Axion** is the KMS product name. This repo is prepared for Git workflow:
+
+| Item | Status |
+|------|--------|
+| Product branding | Axion across docs, scripts, README |
+| Repo names | `axion-vault` (product), `axion-vault-personal` (your private vault) |
+| Branches | `main` + `develop` (create `develop` on fresh clone) |
+| Default branch (GitHub) | Set to `develop` for product repo |
+| Branch protection | Recommended for `main` (require PR) |
+
+**Next step:** Push to GitHub as `axion-vault` (or your org’s repo name), then create feature branches from `develop`.
 
 ---
 
 ## Overview
 
 ```
-cloud-kms-product/     ← PUBLIC (or private for now)
+axion-vault/           ← PUBLIC (or private for now)
   Template vault       ← What you ship
   Branching strategy   ← feature/* → develop → main
   Tagged releases      ← v5.0.0, v5.1.0…
 
-cloud-kms-vault/       ← PRIVATE always
+axion-vault-personal/  ← PRIVATE always
   Your actual notes    ← Everything you live in
   Daily commits        ← Backup + history
   Pulls from product   ← Update vault when template ships
@@ -20,7 +36,7 @@ cloud-kms-vault/       ← PRIVATE always
 
 ---
 
-## Repo 1 — Product (`cloud-kms-product`)
+## Repo 1 — Product (`axion-vault`)
 
 ### Branch Model
 
@@ -93,7 +109,7 @@ git branch -d release/5.1.0
 
 ---
 
-## Repo 2 — Vault (`cloud-kms-vault`)
+## Repo 2 — Vault (`axion-vault-personal`)
 
 ### Philosophy
 
@@ -122,11 +138,11 @@ Or use the automation script below.
 
 ### Auto-Commit Script
 
-Save as `~/bin/kms-vault-sync.sh`:
+Save as `~/bin/axion-vault-sync.sh`:
 
 ```bash
 #!/bin/bash
-# kms-vault-sync.sh — auto commit + push vault
+# axion-vault-sync.sh — auto commit + push Axion vault
 VAULT="$HOME/path/to/your-vault"   # ← update this path
 
 cd "$VAULT" || exit 1
@@ -142,11 +158,11 @@ fi
 ```
 
 ```bash
-chmod +x ~/bin/kms-vault-sync.sh
+chmod +x ~/bin/axion-vault-sync.sh
 
 # Optional: run every hour with cron
 crontab -e
-# Add: 0 * * * * ~/bin/kms-vault-sync.sh >> ~/kms-sync.log 2>&1
+# Add: 0 * * * * ~/bin/axion-vault-sync.sh >> ~/axion-sync.log 2>&1
 ```
 
 ### Commit Message Conventions (vault)
@@ -180,7 +196,7 @@ When you ship a new product version, pull the improvements into your personal va
 Best when your vault has diverged (you've customised things):
 
 ```bash
-PRODUCT="$HOME/dev/cloud-kms-product"
+PRODUCT="$HOME/dev/axion-vault"
 VAULT="$HOME/path/to/your-vault"
 
 # Pull latest product
@@ -210,7 +226,7 @@ Treats the product repo as a subtree inside the vault — tracks it as a remote 
 cd "$VAULT"
 
 # Add product as a remote (one-time)
-git remote add product https://github.com/YOUR_USERNAME/cloud-kms-product.git
+git remote add product https://github.com/YOUR_USERNAME/axion-vault.git
 git fetch product
 
 # Pull product changes into a subfolder
@@ -231,8 +247,8 @@ Use Option A unless you're comfortable with subtree conflicts.
 
 ```bash
 cd ~/dev
-git clone https://github.com/YOUR_USERNAME/cloud-kms-product.git
-cd cloud-kms-product
+git clone https://github.com/YOUR_USERNAME/axion-vault.git
+cd axion-vault
 
 # Create develop branch
 git checkout -b develop
@@ -256,10 +272,10 @@ git branch -m main
 # Copy .gitignore from this guide (or from product repo)
 
 git add .
-git commit -m "init: Cloud KMS v5.0 vault"
+git commit -m "init: Axion v5.0 vault"
 
 # Create private repo on GitHub, then:
-git remote add origin git@github.com:YOUR_USERNAME/cloud-kms-vault.git
+git remote add origin git@github.com:YOUR_USERNAME/axion-vault-personal.git
 git push -u origin main
 ```
 

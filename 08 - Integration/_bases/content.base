@@ -1,11 +1,21 @@
-{
-  "filter": "type = \"content\"",
-  "view": "table",
-  "columns": [
-    { "property": "file.link",    "label": "Title",    "width": 220 },
-    { "property": "platform",     "label": "Platform", "width": 120 },
-    { "property": "format",       "label": "Format",   "width": 110 },
-    { "property": "status",       "label": "Status",   "width": 100 },
-    { "property": "publish_date", "label": "Publish",  "width": 110 }
-  ]
-}
+filter: type = "content"
+view: table
+columns:
+  - property: file.link
+    label: Title
+    width: 220
+  - property: platform
+    label: Platform
+    width: 120
+  - property: format
+    label: Format
+    width: 110
+  - property: status
+    label: Status
+    width: 100
+  - property: publish_date
+    label: Publish
+    width: 110
+views:
+  - type: table
+    name: Table

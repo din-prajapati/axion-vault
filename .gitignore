@@ -10,8 +10,25 @@
 .obsidian/recent-files-obsidian.json
 
 # Keep: app.json, appearance.json, hotkeys.json, community-plugins.json
-# Keep: all plugin binaries (main.js, manifest.json, styles.css)
-# Keep: snippets/, themes/, icons/
+# Keep: snippets/, themes/ (under .obsidian)
+#
+# Skipped below: Remix SVGs + plugin JS — restore with SETUP + icon scripts
+# (see 99 - Meta/00 - Settings/COMMIT-GUIDE.md, SETUP-AND-GIT.md)
+
+# ─── Skip on commit — reinstall / regenerate ─────────────────
+# Remix Icon pack (Iconize): install-remix-icons.ps1 + fix + rename, or SETUP.sh step 4
+.obsidian/icons/remix-icons/**/*.svg
+
+# Icon archives / stray packs under .obsidian/icons
+.obsidian/icons/**/*.zip
+.obsidian/icons/boxicons/
+.obsidian/icons/font-awesome-brands/
+.obsidian/icons/font-awesome-solid/
+
+# Community plugins: SETUP.ps1 / SETUP.sh / SETUP.bat (axion-plugins.json)
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/manifest.json
+.obsidian/plugins/*/styles.css
 
 # ─── Personal Data (never in product repo) ───────────────────
 06 - Daily/Daily/**/*.md          # real daily notes
@@ -59,3 +76,7 @@ dist/
 # ─── API Keys (never commit) ─────────────────────────────────
 **/secrets.*
 **/.secrets
+
+
+#Ignore cursor AI rules
+.cursor\rules\codacy.mdc

@@ -1,4 +1,4 @@
-# Contributing to Cloud KMS
+# Contributing to Axion
 
 ---
 

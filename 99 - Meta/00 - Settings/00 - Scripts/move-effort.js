@@ -1,6 +1,6 @@
 <%*
 // ============================================================
-// move-effort.js — Cloud KMS effort intensity mover
+// move-effort.js — Axion effort intensity mover
 // Moves current project note to the right _on/_ongoing/_simmering/_sleeping folder.
 // Trigger: QuickAdd → "Change Effort" or run from any project note
 // ============================================================

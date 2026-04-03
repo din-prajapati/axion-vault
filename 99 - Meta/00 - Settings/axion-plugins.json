@@ -1,0 +1,167 @@
+{
+  "_meta": {
+    "name": "Axion Plugin Registry",
+    "version": "5.0.0",
+    "description": "Single source of truth for all Obsidian plugins used in Axion vault.",
+    "install_with": "bash 99 - Meta/00 - Settings/SETUP.sh"
+  },
+
+  "plugins": [
+
+    {
+      "id": "dataview",
+      "name": "Dataview",
+      "repo": "blacksmithgu/obsidian-dataview",
+      "tier": "core",
+      "required": true,
+      "description": "Live queries powering all Bases fallback and Home.md task views",
+      "config": null
+    },
+
+    {
+      "id": "templater-obsidian",
+      "name": "Templater",
+      "repo": "SilentVoid13/Templater",
+      "tier": "core",
+      "required": true,
+      "description": "Powers all (TEMPLATE) files and QuickAdd scripts",
+      "config": null,
+      "manual_step": "Set user scripts folder → 99 - Meta/00 - Settings/00 - Scripts/"
+    },
+
+    {
+      "id": "quickadd",
+      "name": "QuickAdd",
+      "repo": "chhoumann/quickadd",
+      "tier": "core",
+      "required": true,
+      "description": "Cmd+T (tasks), Cmd+Shift+E (effort move), Cmd+Shift+A (AI ask)",
+      "config": null,
+      "manual_step": "Wire 4 macros from 99 - Meta/00 - Settings/quickadd-config.md"
+    },
+
+    {
+      "id": "periodic-notes",
+      "name": "Periodic Notes",
+      "repo": "liamcain/obsidian-periodic-notes",
+      "tier": "core",
+      "required": true,
+      "description": "Cmd+D daily notes, weekly and monthly reviews",
+      "config": "99 - Meta/00 - Settings/02 - Plugin Configs/periodic-notes.json"
+    },
+
+    {
+      "id": "obsidian-icon-folder",
+      "name": "Iconize",
+      "repo": "FlorianWoelki/obsidian-icon-folder",
+      "tier": "core",
+      "required": true,
+      "description": "Folder and file icons using Remixicon set",
+      "config": "99 - Meta/00 - Settings/02 - Plugin Configs/icon-folders.json"
+    },
+
+    {
+      "id": "obsidian-style-settings",
+      "name": "Style Settings",
+      "repo": "mgmeyers/obsidian-style-settings",
+      "tier": "core",
+      "required": true,
+      "description": "Vauxhall theme control — Indigo, Standard, Gradient Cyan/Purple headers",
+      "config": "99 - Meta/00 - Settings/02 - Plugin Configs/style-settings.json"
+    },
+
+    {
+      "id": "calendar",
+      "name": "Calendar",
+      "repo": "liamcain/obsidian-calendar-plugin",
+      "tier": "core",
+      "required": true,
+      "description": "Calendar sidebar widget — click any day to open daily note",
+      "config": null
+    },
+
+    {
+      "id": "obsidian-tasks-plugin",
+      "name": "Tasks",
+      "repo": "obsidian-tasks-group/obsidian-tasks",
+      "tier": "core",
+      "required": true,
+      "description": "Advanced task queries — due dates, priorities, recurrence",
+      "config": null
+    },
+
+    {
+      "id": "tag-wrangler",
+      "name": "Tag Wrangler",
+      "repo": "pjeby/tag-wrangler",
+      "tier": "core",
+      "required": true,
+      "description": "Rename, merge, and manage tags across vault",
+      "config": null
+    },
+
+    {
+      "id": "smart-connections",
+      "name": "Smart Connections",
+      "repo": "brianpetro/obsidian-smart-connections",
+      "tier": "phase2",
+      "required": false,
+      "description": "AI-powered note similarity and semantic search",
+      "config": null,
+      "manual_step": "Requires ANTHROPIC_API_KEY in plugin settings"
+    },
+
+    {
+      "id": "obsidian-advanced-uri",
+      "name": "Advanced URI",
+      "repo": "Vinzent03/obsidian-advanced-uri",
+      "tier": "phase2",
+      "required": false,
+      "description": "Deep link into vault from CLI scripts and automation",
+      "config": null
+    },
+
+    {
+      "id": "obsidian-kanban",
+      "name": "Kanban",
+      "repo": "mgmeyers/obsidian-kanban",
+      "tier": "phase3",
+      "required": false,
+      "description": "Card-based project board view for effort folders",
+      "config": null
+    },
+
+    {
+      "id": "obsidian-excalidraw-plugin",
+      "name": "Excalidraw",
+      "repo": "zsviczian/obsidian-excalidraw-plugin",
+      "tier": "phase3",
+      "required": false,
+      "description": "Sketch diagrams and visual maps inside vault",
+      "config": null
+    },
+
+    {
+      "id": "cmdr",
+      "name": "Commander",
+      "repo": "phibr0/obsidian-commander",
+      "tier": "phase3",
+      "required": false,
+      "description": "Add custom commands to toolbar, sidebar, context menus",
+      "config": null
+    }
+
+  ],
+
+  "community_plugins_enabled": [
+    "dataview",
+    "templater-obsidian",
+    "quickadd",
+    "periodic-notes",
+    "obsidian-icon-folder",
+    "obsidian-style-settings",
+    "calendar",
+    "obsidian-tasks-plugin",
+    "tag-wrangler"
+  ]
+}

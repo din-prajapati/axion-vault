@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================
-# kms-gemini.sh — Cloud KMS → Gemini CLI bridge
+# kms-gemini.sh — Axion → Gemini CLI bridge
 # Usage:
 #   echo "your prompt" | ./kms-gemini.sh
 #   ./kms-gemini.sh --file "path/to/note.md" --prompt "Analyse this"
@@ -16,7 +16,7 @@ API_KEY="${GEMINI_API_KEY:-}"
 # ── Defaults ─────────────────────────────────────────────────
 FILE=""
 PROMPT=""
-SYSTEM_PROMPT="You are a knowledgeable assistant integrated into a personal knowledge management vault (Cloud KMS). \
+SYSTEM_PROMPT="You are a knowledgeable assistant integrated into a personal knowledge management vault (Axion). \
 Vault notes use PARA-adjacent structure: Projects, Areas, Resources, Permanent notes. \
 Frontmatter fields include: type, status, priority, area, deadline, tags. \
 Be concise. Format responses in Markdown."
