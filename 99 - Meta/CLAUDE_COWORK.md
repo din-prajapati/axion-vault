@@ -1,8 +1,8 @@
 ---
-type: cowork
+
+## type: cowork
 version: "2.0"
 last_updated: 2026-03-13
----
 
 # 🤖 Claude Cowork — Vault Brief
 
@@ -13,14 +13,16 @@ last_updated: 2026-03-13
 
 ## 1 · Vault Identity
 
-| Key | Value |
-|-----|-------|
-| Vault name | Cloud KMS |
-| Owner | Ahmedabad, Gujarat, IN |
-| OS | Mac + iPhone |
-| Theme | Vauxhall (Indigo, Standard, Gradient Cyan/Purple) |
-| Font | JetBrains Mono Nerd Font Mono |
-| Obsidian version | 1.9+ (Bases supported) |
+
+| Key              | Value                                             |
+| ---------------- | ------------------------------------------------- |
+| Vault name       | Axion                                             |
+| Owner            | 100xArch - Dinesh                                 |
+| OS               | Mac + iPhone                                      |
+| Theme            | Vauxhall (Indigo, Standard, Gradient Cyan/Purple) |
+| Font             | JetBrains Mono Nerd Font Mono                     |
+| Obsidian version | 1.9+ (Bases supported)                            |
+
 
 ---
 
@@ -50,26 +52,29 @@ last_updated: 2026-03-13
 
 ## 3 · Object Types (frontmatter `type:`)
 
-| type | Location | Key fields |
-|------|----------|------------|
-| `home` | 00 - Maps of Content/ | — |
-| `fleeting` | 01 - Inbox/ | status, source, captured |
-| `project` | 02 - Projects/ | status, priority, area, deadline |
-| `person` | 03 - Areas/Relationships/ | role, company, last_contact, projects[] |
-| `meeting` | 03 - Areas/Meetings/ | date, people[], projects[] |
-| `content` | 03 - Areas/Creative/ | platform, format, status, publish_date |
-| `book` | 04 - Resources/Learning/ | author, status, rating |
-| `permanent` | 05 - Permanent/ | — |
-| `daily` | 06 - Daily/Daily/ | sleep, mood, energy, deep_work_hrs |
-| `weekly` | 06 - Daily/Weekly/ | week |
-| `monthly` | 06 - Daily/Monthly/ | income, expenses, savings |
-| `moc` | anywhere | — |
+
+| type        | Location                  | Key fields                              |
+| ----------- | ------------------------- | --------------------------------------- |
+| `home`      | 00 - Maps of Content/     | —                                       |
+| `fleeting`  | 01 - Inbox/               | status, source, captured                |
+| `project`   | 02 - Projects/            | status, priority, area, deadline        |
+| `person`    | 03 - Areas/Relationships/ | role, company, last_contact, projects[] |
+| `meeting`   | 03 - Areas/Meetings/      | date, people[], projects[]              |
+| `content`   | 03 - Areas/Creative/      | platform, format, status, publish_date  |
+| `book`      | 04 - Resources/Learning/  | author, status, rating                  |
+| `permanent` | 05 - Permanent/           | —                                       |
+| `daily`     | 06 - Daily/Daily/         | sleep, mood, energy, deep_work_hrs      |
+| `weekly`    | 06 - Daily/Weekly/        | week                                    |
+| `monthly`   | 06 - Daily/Monthly/       | income, expenses, savings               |
+| `moc`       | anywhere                  | —                                       |
+
 
 ---
 
 ## 4 · Plugin Stack
 
 ### Phase 1 — Installed (from Cloud_KMS)
+
 - Dataview · Templater · QuickAdd · Calendar
 - Obsidian Icon Folder (Iconize) · Day Planner
 - Admonition · Banners · Pexels Banner
@@ -78,10 +83,12 @@ last_updated: 2026-03-13
 - Advanced Slides (Vauxhall CSS variant included)
 
 ### Phase 2 — Add Next
+
 - Periodic Notes (for Weekly/Monthly/Yearly auto-creation)
 - Smart Connections (Claude API key → in-vault AI search)
 
 ### Phase 3 — Later
+
 - Kanban · Commander · Advanced URI
 
 ---
@@ -114,31 +121,35 @@ Runescape / Minecraft   ← fun overlays (toggle as needed)
 ## 7 · Session Starters (copy-paste for Claude)
 
 ### Add a new template
+
 ```
-Vault = Cloud KMS (see CLAUDE_COWORK.md §2–3 for context).
+Vault = Axion (see CLAUDE_COWORK.md §2–3 for context).
 Create a new Templater template for type = "[TYPE]".
 Save to: 99 - Meta/02 - Templates/(TEMPLATE) [Name].md
 Follow the frontmatter schema in §3. Match Vauxhall dark aesthetic.
 ```
 
 ### Build a new Base view
+
 ```
-Vault = Cloud KMS. Add a new Obsidian Bases .base file to:
+Vault = Axion. Add a new Obsidian Bases .base file to:
 08 - Integration/_bases/[name].base
 Filter: type = "[type]", columns: [field1, field2, field3]
 Also update the Bases Hub index: 08 - Integration/_bases/Bases Hub.md
 ```
 
 ### Fix/extend a Dataview query
+
 ```
-Vault = Cloud KMS. This Dataview query in [file] isn't working:
+Vault = Axion. This Dataview query in [file] isn't working:
 [paste query]
 Fields available: [list from §3]. Fix or extend it.
 ```
 
 ### Add an automation
+
 ```
-Vault = Cloud KMS. Mac + iPhone. Plugins: Templater, QuickAdd, Periodic Notes.
+Vault = Axion. Mac + iPhone. Plugins: Templater, QuickAdd, Periodic Notes.
 I want to automate: [describe trigger + action].
 Output: QuickAdd macro config OR Templater script for 99 - Meta/00 - Settings/00 - Scripts/
 ```
@@ -147,19 +158,19 @@ Output: QuickAdd macro config OR Templater script for 99 - Meta/00 - Settings/00
 
 ## 8 · Pending Work (pick up here)
 
-- [x] Copy existing Meta inheritance system from `99_-_Meta.zip` → `99 - Meta/01 - Core/` ✅ already present in v2
-- [x] Configure Periodic Notes plugin → `99 - Meta/00 - Settings/02 - Plugin Configs/periodic-notes.json` ✅ 2026-03-13
-- [x] Create 6 `.base` files in `08 - Integration/_bases/` (all columns configured) ✅ 2026-03-13
-- [ ] Rename live vault folders: 01→02, 02→03, 03→04, 04→05, 05→01 (Inbox) — **do manually in Obsidian**
-- [x] `SETUP.sh` copies `Colored Sidebar Items.css` → `.obsidian/snippets/` automatically ✅ 2026-03-13
-- [x] Style Settings config: Indigo · Standard · Gradient Cyan/Purple → `02 - Plugin Configs/style-settings.json` ✅ 2026-03-13
-- [x] `_scripts/` starter kit — `kms-claude.sh`, `kms-gemini.sh`, `kms-ask.sh` ✅ 2026-03-13
-- [x] `CLAUDE.md` auto-generator — `generate-claude-md.js` + wired into Project template ✅ 2026-03-13
-- [x] QuickAdd → AI macro — `ai-ask.js` + `quickadd-config.md` setup guide ✅ 2026-03-13
-- [ ] Install Smart Connections (Phase 2) — manual, needs API key
-- [ ] Install Periodic Notes (Phase 2) — manual via Community Plugins
-- [ ] `.cursorrules` template (Phase 3)
-- [ ] NotebookLM export macro (Phase 3)
+- Copy existing Meta inheritance system from `99_-_Meta.zip` → `99 - Meta/01 - Core/` ✅ already present in v2
+- Configure Periodic Notes plugin → `99 - Meta/00 - Settings/02 - Plugin Configs/periodic-notes.json` ✅ 2026-03-13
+- Create 6 `.base` files in `08 - Integration/_bases/` (all columns configured) ✅ 2026-03-13
+- Rename live vault folders: 01→02, 02→03, 03→04, 04→05, 05→01 (Inbox) — **do manually in Obsidian**
+- `SETUP.sh` copies `Colored Sidebar Items.css` → `.obsidian/snippets/` automatically ✅ 2026-03-13
+- Style Settings config: Indigo · Standard · Gradient Cyan/Purple → `02 - Plugin Configs/style-settings.json` ✅ 2026-03-13
+- `_scripts/` starter kit — `kms-claude.sh`, `kms-gemini.sh`, `kms-ask.sh` ✅ 2026-03-13
+- `CLAUDE.md` auto-generator — `generate-claude-md.js` + wired into Project template ✅ 2026-03-13
+- QuickAdd → AI macro — `ai-ask.js` + `quickadd-config.md` setup guide ✅ 2026-03-13
+- Install Smart Connections (Phase 2) — manual, needs API key
+- Install Periodic Notes (Phase 2) — manual via Community Plugins
+- `.cursorrules` template (Phase 3)
+- NotebookLM export macro (Phase 3)
 
 ---
 
