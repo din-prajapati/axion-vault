@@ -1,0 +1,162 @@
+{
+  "_comment": "Axion Clip Processor Schema — single source of truth for clipping type→template mapping.",
+  "_version": "1.0.0",
+  "_usage": "Read by kms-clip-process.sh. When a template's fields change, update the matching type_schema here.",
+
+  "clippings_inbox": "01 - Inbox/_clippings",
+
+  "allowed_types": ["resource", "book", "content", "fleeting"],
+
+  "type_schemas": {
+
+    "resource": {
+      "_source_template": "99 - Meta/02 - Templates/(TEMPLATE) Resource.md",
+      "_source_base":     "08 - Integration/_bases/resources.base",
+
+      "cssclasses":     ["resource", "base-object"],
+      "tags":           ["resource"],
+      "status_initial": "Ready for Review",
+      "status_final":   "Reference",
+
+      "folder_default": "04 - Resources/Learning",
+      "folder_by_format": {
+        "article":       "04 - Resources/Learning",
+        "longform":      "04 - Resources/Learning",
+        "video":         "04 - Resources/Media",
+        "documentation": "04 - Resources/Reference",
+        "llm-chat":      "04 - Resources/Reference"
+      },
+
+      "frontmatter_fields": {
+        "type":            "resource",
+        "title":           "{{title}}",
+        "resource_topic":  "{{llm:resource_topic}}",
+        "resource_format": "{{llm:resource_format}}",
+        "status":          "Ready for Review",
+        "captured":        "{{date}}",
+        "source":          "{{url}}",
+        "scope":           "{{llm:scope}}",
+        "created":         "{{date}}",
+        "tags":            ["resource"],
+        "cssclasses":      ["resource", "base-object"]
+      },
+
+      "content_sections": [
+        { "heading": "Key Takeaways",  "source": "llm:key_takeaways" },
+        { "heading": "Summary",        "source": "llm:summary" },
+        { "heading": "Full Content",   "source": "raw" },
+        { "heading": "Links",          "source": "static", "value": "- External: [{{title}}]({{url}})" }
+      ]
+    },
+
+    "book": {
+      "_source_template": "99 - Meta/02 - Templates/(TEMPLATE) Book.md",
+      "_source_base":     "08 - Integration/_bases/books.base",
+
+      "cssclasses":     ["book", "base-object"],
+      "tags":           ["book"],
+      "status_initial": "Ready for Review",
+      "status_final":   "Want to Read",
+
+      "folder_default": "04 - Resources/Learning",
+
+      "frontmatter_fields": {
+        "type":       "book",
+        "title":      "{{title}}",
+        "author":     "{{llm:author}}",
+        "status":     "Ready for Review",
+        "rating":     "",
+        "started":    "",
+        "finished":   "",
+        "genre":      "{{llm:genre}}",
+        "created":    "{{date}}",
+        "tags":       ["book"],
+        "cssclasses": ["book", "base-object"]
+      },
+
+      "content_sections": [
+        { "heading": "Central Thesis", "source": "llm:central_thesis", "style": "blockquote" },
+        { "heading": "Key Ideas",      "source": "llm:key_ideas" },
+        { "heading": "Why I Want to Read This", "source": "static", "value": "- " },
+        {
+          "heading": "Applied To",
+          "source":  "dataview",
+          "value":   "LIST FROM \"\"\nWHERE contains(file.outlinks, this.file.link)"
+        }
+      ]
+    },
+
+    "content": {
+      "_source_template": "99 - Meta/02 - Templates/(TEMPLATE) Content.md",
+      "_source_base":     "08 - Integration/_bases/content.base",
+
+      "cssclasses":     ["content", "base-object"],
+      "tags":           ["content"],
+      "status_initial": "Ready for Review",
+      "status_final":   "Idea",
+
+      "folder_default": "03 - Areas/Creative",
+
+      "frontmatter_fields": {
+        "type":         "content",
+        "title":        "IDEA - {{title}}",
+        "platform":     "",
+        "format":       "article",
+        "status":       "Ready for Review",
+        "publish_date": "",
+        "created":      "{{date}}",
+        "tags":         ["content"],
+        "cssclasses":   ["content", "base-object"]
+      },
+
+      "content_sections": [
+        { "heading": "Angle / Hook",  "source": "llm:angle_hook", "style": "blockquote" },
+        { "heading": "Inspired By",   "source": "static", "value": "Source: [{{title}}]({{url}})" },
+        { "heading": "Outline",       "source": "static", "value": "1. \n2. \n3. " },
+        { "heading": "Draft",         "source": "static", "value": "" }
+      ]
+    },
+
+    "fleeting": {
+      "_source_template": "99 - Meta/02 - Templates/(TEMPLATE) Fleeting.md",
+      "_source_base":     "08 - Integration/_bases/fleeting.base",
+
+      "cssclasses":     ["fleeting", "base-object"],
+      "tags":           ["fleeting"],
+      "status_initial": "Ready for Review",
+      "status_final":   "Unprocessed",
+
+      "folder_default": "01 - Inbox/_links",
+
+      "frontmatter_fields": {
+        "type":       "fleeting",
+        "title":      "{{title}}",
+        "status":     "Ready for Review",
+        "source":     "{{url}}",
+        "captured":   "{{date}}",
+        "area":       "{{llm:area}}",
+        "created":    "{{date}}",
+        "tags":       ["fleeting"],
+        "cssclasses": ["fleeting", "base-object"]
+      },
+
+      "content_sections": [
+        { "heading": "Raw Capture", "source": "raw" },
+        {
+          "heading": "Next Action When Processing",
+          "source":  "static",
+          "value":   "- [ ] Convert to project / task / permanent / resource\n- [ ] Archive if noise"
+        }
+      ]
+    }
+
+  },
+
+  "llm": {
+    "classification_prompt": "You are a knowledge management assistant for the Axion vault (PARA-adjacent: Projects, Areas, Resources, Permanent). Analyze the clipped note below and return a single valid JSON object. Return ONLY the JSON — no markdown fences, no explanation.\n\nRules:\n- type: must be exactly one of [resource, book, content, fleeting]\n- resource_format: must be exactly one of [article, video, documentation, llm-chat, longform]\n- area: must be one of [Work, Health, Finance, Creative, Personal, Relationships] or empty string\n- All text fields must be plain markdown, no HTML\n- key_takeaways: markdown bullet list (3-5 items)\n- key_ideas: markdown numbered list (3-5 items, for books only)\n\nReturn this exact shape:\n{\n  \"type\": \"\",\n  \"resource_format\": \"\",\n  \"resource_topic\": \"\",\n  \"scope\": \"\",\n  \"author\": \"\",\n  \"genre\": \"\",\n  \"area\": \"\",\n  \"key_takeaways\": \"\",\n  \"summary\": \"\",\n  \"central_thesis\": \"\",\n  \"key_ideas\": \"\",\n  \"angle_hook\": \"\"\n}",
+
+    "model_preference_order": ["claude", "gemini"],
+
+    "context_note": "Pass the full raw clipping content as the user message after the classification prompt."
+  }
+}

@@ -1,0 +1,30 @@
+filter: type = "fleeting"
+view: table
+columns:
+  - property: file.link
+    label: Note
+    width: 260
+  - property: title
+    label: Title
+    width: 200
+  - property: status
+    label: Status
+    width: 110
+  - property: source
+    label: Source
+    width: 120
+  - property: captured
+    label: Captured
+    width: 110
+  - property: area
+    label: Area
+    width: 100
+  - property: tags
+    label: Tags
+    width: 120
+filters:
+  and:
+    - type == "fleeting"
+views:
+  - type: table
+    name: Table
