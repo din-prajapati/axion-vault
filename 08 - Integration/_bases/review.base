@@ -1,0 +1,33 @@
+filter: status = "Ready for Review"
+view: table
+columns:
+  - property: file.link
+    label: Note
+    width: 240
+  - property: status
+    label: Status
+    width: 160
+  - property: type
+    label: Type
+    width: 90
+  - property: resource_format
+    label: Format
+    width: 100
+  - property: area
+    label: Area
+    width: 100
+  - property: resource_topic
+    label: Topic
+    width: 160
+  - property: tags
+    label: Tags
+    width: 160
+  - property: captured
+    label: Captured
+    width: 110
+filters:
+  and:
+    - status == "Ready for Review"
+views:
+  - type: table
+    name: Review

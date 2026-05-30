@@ -1,0 +1,30 @@
+filter: type = "resource"
+view: table
+columns:
+  - property: file.link
+    label: Resource
+    width: 260
+  - property: title
+    label: Title
+    width: 200
+  - property: resource_topic
+    label: Topic
+    width: 140
+  - property: resource_format
+    label: Format
+    width: 100
+  - property: status
+    label: Status
+    width: 100
+  - property: captured
+    label: Captured
+    width: 110
+  - property: tags
+    label: Tags
+    width: 130
+filters:
+  and:
+    - type == "resource"
+views:
+  - type: table
+    name: Table
